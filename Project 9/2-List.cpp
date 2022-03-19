@@ -9,21 +9,36 @@ using namespace std;
 List::List()
 {       
  length = 0;
- head = NULL;
+ head = nullptr;
 }
 
 //Destructor
 List::~List()
 {
+    node* curNode = head;
+    while (curNode != nullptr)
+    {
+        node* nextNode = curNode->next;
+        delete curNode;
+        curNode = nextNode;
+    }
+    head = nullptr;
+    delete head;
 }
 
 //Head-related functions
 void List::PutItemH(itemType item)
 {
+    node* temp = new node;
+    temp->item = item;
+    temp->next = head;
+    head = temp;
+    length++;
 }
 
 itemType List::GetItemH() const
 {
+    return 0;
 }
 
 void List::DeleteItemH()
@@ -35,11 +50,23 @@ void List::DeleteItemH()
 
 void List::Print() const
 {
+    node* cur = head;
+    while (cur != nullptr)
+    {
+        cout << cur->item << endl;
+        cur = cur->next;
+    }
+    cur = nullptr;
+    delete cur;
 }
 
 bool List::IsEmpty() const
 {
- return true;
+    if (length == 0) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 

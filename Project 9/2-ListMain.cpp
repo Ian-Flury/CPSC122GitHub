@@ -7,10 +7,19 @@ int main()
 {
  //Static list 
  List lst;
- for (int i = 0; i < 5; i++) 
-   lst.PutItemH(i);
+
+
+ /*for (int i = 0; i <= 6; i++)
+   lst.PutItemH(i);*/
+ lst.PutItemH(69);
+ lst.PutItemH(69);
  lst.Print();
- cout << endl;
+ //lst.PutItemH(69);
+ //lst.Print();
+
+
+
+ /*
  lst.DeleteItemH();
  cout << endl;
  lst.Print();
@@ -28,5 +37,6 @@ int main()
 
  delete lst1; //necessary to invoke destructor on dynamic list
  cout << endl;
+  */
  return 0;
 }
