@@ -69,5 +69,8 @@ bool List::IsEmpty() const
     }
 }
 
-
+int List::GetLength() const
+{
+    return length;
+}
 
