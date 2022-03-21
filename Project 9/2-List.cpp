@@ -43,6 +43,10 @@ itemType List::GetItemH() const
 
 void List::DeleteItemH()
 {
+    node* temp = head->next;
+    delete head;
+    head = temp;
+    length--;
 }
 
 
@@ -74,3 +78,50 @@ int List::GetLength() const
     return length;
 }
 
+int List::Find(const itemType target) const
+{
+    int numberOfNodesWithItem = 0;
+    if (length != 0) {
+        node *cur = head;
+        while (cur != NULL) {
+            if (cur->item == target) {
+                numberOfNodesWithItem++;
+            }
+            cur = cur->next;
+        }
+    }
+    return numberOfNodesWithItem;
+}
+
+int List::DeleteItem(const itemType target)
+{
+    //there should be two loops, the first to check if the
+    //target is at head.
+    int numberNodesDeleted = 0;
+    while (head->item == target)
+    {
+        DeleteItemH();
+        numberNodesDeleted++;
+    }
+
+    node* prev = head;
+    node* cur = head->next;
+
+    while (cur != nullptr)
+    {
+        if (cur->item == target)
+        {
+            node* rmv = cur;
+            cur = cur->next;
+            prev->next = cur;
+            rmv->next = nullptr;
+            delete rmv;
+            length--;
+            numberNodesDeleted++;
+        } else {
+            prev = prev->next;
+            cur = cur->next;
+        }
+    }
+    return numberNodesDeleted;
+}
