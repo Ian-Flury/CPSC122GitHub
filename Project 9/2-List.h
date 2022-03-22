@@ -1,9 +1,11 @@
 /*
-Name: Paul De Palma
+Name: Ian Flury
 Class: CPSC 122, Section 1
-Date Submitted: March 15, 2022
-Assignment: N/A 
-Description: Program illustrates a simple linked list  
+Date Submitted: March 22, 2022
+Assignment: Project 9 Writing a Linked List Class
+Description: This file defines a linked list class.
+Notes: See the class other two related files, 2-ListTst.cpp
+       and 2-List.cpp
 */
 
 #ifndef LIST_H
