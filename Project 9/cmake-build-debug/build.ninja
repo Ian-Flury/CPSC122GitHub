@@ -49,8 +49,8 @@ cmake_ninja_workdir = C$:/Users/ianfl/Documents/Gonzaga/CPSC$ 122$ 02$ --$ Compu
 
 build cmake_object_order_depends_target_Project_9: phony || CMakeFiles/Project_9.dir
 
-build CMakeFiles/Project_9.dir/2-ListMain.cpp.obj: CXX_COMPILER__Project_9_Debug C$:/Users/ianfl/Documents/Gonzaga/CPSC$ 122$ 02$ --$ Computer$ Science$ II/CPSC122GitHub/Project$ 9/2-ListMain.cpp || cmake_object_order_depends_target_Project_9
-  DEP_FILE = CMakeFiles\Project_9.dir\2-ListMain.cpp.obj.d
+build CMakeFiles/Project_9.dir/2-ListTst.cpp.obj: CXX_COMPILER__Project_9_Debug C$:/Users/ianfl/Documents/Gonzaga/CPSC$ 122$ 02$ --$ Computer$ Science$ II/CPSC122GitHub/Project$ 9/2-ListTst.cpp || cmake_object_order_depends_target_Project_9
+  DEP_FILE = CMakeFiles\Project_9.dir\2-ListTst.cpp.obj.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\Project_9.dir
   OBJECT_FILE_DIR = CMakeFiles\Project_9.dir
@@ -69,7 +69,7 @@ build CMakeFiles/Project_9.dir/2-List.cpp.obj: CXX_COMPILER__Project_9_Debug C$:
 #############################################
 # Link the executable Project_9.exe
 
-build Project_9.exe: CXX_EXECUTABLE_LINKER__Project_9_Debug CMakeFiles/Project_9.dir/2-ListMain.cpp.obj CMakeFiles/Project_9.dir/2-List.cpp.obj
+build Project_9.exe: CXX_EXECUTABLE_LINKER__Project_9_Debug CMakeFiles/Project_9.dir/2-ListTst.cpp.obj CMakeFiles/Project_9.dir/2-List.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Project_9.dir

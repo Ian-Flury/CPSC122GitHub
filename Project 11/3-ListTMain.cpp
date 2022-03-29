@@ -158,7 +158,7 @@ int main()
     //End Test of DeleteItem()
 //-------------------------------------------------------------------------------
     //Test of PutItemT()
-    /*
+    ///*
     cout << "***************************************" << endl;
     cout << "*****Test 1 PutItemT()*****" << endl;
     cout << "static test" << endl;
@@ -184,7 +184,7 @@ int main()
     //End Test of PutItemT()
 //-------------------------------------------------------------------------------
     //Test of PutItemT()
-    ///*
+    /*
     cout << "***************************************" << endl;
     cout << "*****Test 1 PutItemT()*****" << endl;
     cout << "static test" << endl;

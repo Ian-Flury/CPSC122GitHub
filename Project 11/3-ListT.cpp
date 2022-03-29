@@ -32,11 +32,20 @@ void ListT::PutItemH(itemType item)
     //to put an item at the head of the list, create a new node
     //and assign the item of this node to the input item.
     //splice the node into the front of the list.
-    node* temp = new node;
-    temp->item = item;
-    temp->next = head;
-    head = temp;
-    length++;
+    if (length == 0) {
+        node *temp = new node;
+        temp->item = item;
+        temp->next = head;
+        head = temp;
+        tail = temp;
+        length++;
+    } else {
+        node *temp = new node;
+        temp->item = item;
+        temp->next = head;
+        head = temp;
+        length++;
+    }
 }
 
 void ListT::Print() const
@@ -143,23 +152,15 @@ void ListT::PutItemT(const itemType itemIn)
 {
     if (length == 0)
     {
-        node* temp = new node;
-        temp->item = itemIn;
-        temp->next = nullptr;
-
-        head = temp;
-        tail = temp;
-
-        length++;
+        PutItemH(itemIn);
     } else {
         node* temp = new node;
         temp->item = itemIn;
-
-        temp->next = nullptr;
-
         tail->next = temp;
         tail = temp;
-
+        temp->next = nullptr;
+        temp = nullptr;
+        delete temp;
         length++;
     }
 }
