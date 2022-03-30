@@ -118,17 +118,17 @@ int main()
     //*/
     //End Test of DeleteItemH()
 //-------------------------------------------------------------------------------
-    //Test of Find()
+    //Test of FindItem()
     /*
     cout << "***************************************" << endl;
-    cout << "*****Test 1 Find()*****" << endl;
+    cout << "*****Test 1 FindItem()*****" << endl;
     cout << "static test" << endl;
     cout << "output: the number of nodes that store the target" << endl;
     for (int i = 0; i < 5; i++)
         lst.PutItemH(i);
     cout << lst.FindItem(4) << endl;
 
-    cout << "*****Test 2  Find()*****" << endl;
+    cout << "*****Test 2  FindItem()*****" << endl;
     cout << "dynamic test" << endl;
     cout << "output: the number of nodes that store the target" << endl;
     for (int i = 0; i < 5; i++)
@@ -136,7 +136,7 @@ int main()
     cout << lst1->FindItem(4) << endl;
     cout << "***************************************" << endl;
     //*/
-    //End Test of Find()
+    //End Test of FindItem()
 //-------------------------------------------------------------------------------
     //Test of DeleteItem()
     /*
@@ -214,8 +214,8 @@ int main()
     cout << "*****Test 1 DeleteItemT()*****" << endl;
     cout << "static test" << endl;
     cout << "output: the number of nodes deleted" << endl;
-//    for (int i = 0; i < 5; i++)
-//        lst.PutItemH(i);
+    for (int i = 0; i < 5; i++)
+        lst.PutItemH(i);
     lst.PutItemH(3);
     lst.Print();
     cout << "list after DeleteItemT: " << endl;
@@ -225,8 +225,8 @@ int main()
     cout << "*****Test 2  DeleteItemT()*****" << endl;
     cout << "dynamic test" << endl;
     cout << "output: the number of nodes deleted" << endl;
-//    for (int i = 0; i < 5; i++)
-//        lst1->PutItemH(i);
+    for (int i = 0; i < 5; i++)
+        lst1->PutItemH(i);
     lst1->PutItemH(3);
     lst1->Print();
     cout << "list after DeleteItemT: " << endl;
@@ -260,13 +260,8 @@ int main()
     lst1->Print();
     cout << "***************************************" << endl;
     //*/
-    //End Test of DeleteItemT()
+    //End Test of DeleteItem()
 //-------------------------------------------------------------------------------
-
-
-//TODO: changed DeleteItemH, check to make sure it works in the
-//  case where the list length is 1 when the function is called.
-
 
     delete lst1; //necessary to invoke destructor on dynamic list
     cout << endl;

@@ -9,17 +9,18 @@ int main() {
 
     for (int i = 0; i < 5; i++)
     {
-        lst.PutItemH(i);
+        lst.PutItemH(5);
     }
+
     cout << "list before: " << endl;
     lst.Print();
 
-
+    cout << "list empty status: " << lst.IsEmpty() << endl;
 
 
 
     cout << "list after: " << endl;
-    cout << "nodes deleted: " << lst.DeleteItem(0) << endl;
+    cout << "nodes found: " << lst.FindItem(5) << endl;
     lst.Print();
 
     return 0;
