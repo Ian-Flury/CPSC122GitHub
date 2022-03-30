@@ -3,6 +3,7 @@ using namespace std;
 
 #include "3-ListT.h"
 
+
 int main()
 {
 //Static list
@@ -158,7 +159,7 @@ int main()
     //End Test of DeleteItem()
 //-------------------------------------------------------------------------------
     //Test of PutItemT()
-    ///*
+    /*
     cout << "***************************************" << endl;
     cout << "*****Test 1 PutItemT()*****" << endl;
     cout << "static test" << endl;
@@ -183,10 +184,10 @@ int main()
     //*/
     //End Test of PutItemT()
 //-------------------------------------------------------------------------------
-    //Test of PutItemT()
+    //Test of GetItemT()
     /*
     cout << "***************************************" << endl;
-    cout << "*****Test 1 PutItemT()*****" << endl;
+    cout << "*****Test 1 GetItemT()*****" << endl;
     cout << "static test" << endl;
     cout << "output: the number of nodes deleted" << endl;
     for (int i = 0; i < 5; i++)
@@ -195,17 +196,76 @@ int main()
     cout << "item: " << endl;
     cout << lst.GetItemT() << endl;
 
-    cout << "*****Test 2  PutItemT()*****" << endl;
+    cout << "*****Test 2  GetItemT()*****" << endl;
     cout << "dynamic test" << endl;
     cout << "output: the number of nodes deleted" << endl;
     for (int i = 0; i < 5; i++)
         lst1->PutItemH(i);
     lst1->Print();
+    cout << "item: " << endl;
     cout << lst1->GetItemT() << endl;
     cout << "***************************************" << endl;
     //*/
-    //End Test of PutItemT()
+    //End Test of GetItemT()
 //-------------------------------------------------------------------------------
+    //Test of DeleteItemT()
+    /*
+    cout << "***************************************" << endl;
+    cout << "*****Test 1 DeleteItemT()*****" << endl;
+    cout << "static test" << endl;
+    cout << "output: the number of nodes deleted" << endl;
+//    for (int i = 0; i < 5; i++)
+//        lst.PutItemH(i);
+    lst.PutItemH(3);
+    lst.Print();
+    cout << "list after DeleteItemT: " << endl;
+    lst.DeleteItemT();
+    lst.Print();
+
+    cout << "*****Test 2  DeleteItemT()*****" << endl;
+    cout << "dynamic test" << endl;
+    cout << "output: the number of nodes deleted" << endl;
+//    for (int i = 0; i < 5; i++)
+//        lst1->PutItemH(i);
+    lst1->PutItemH(3);
+    lst1->Print();
+    cout << "list after DeleteItemT: " << endl;
+    lst1->DeleteItemT();
+    lst1->Print();
+    cout << "***************************************" << endl;
+    //*/
+    //End Test of DeleteItemT()
+//-------------------------------------------------------------------------------
+    //Test of DeleteItem()
+    /*
+    cout << "***************************************" << endl;
+    cout << "*****Test 1 DeleteItem()*****" << endl;
+    cout << "static test" << endl;
+    cout << "output: the number of nodes deleted" << endl;
+    for (int i = 0; i < 5; i++)
+        lst.PutItemH(i);
+    lst.Print();
+    cout << "list after DeleteItem: " << endl;
+    lst.DeleteItem(3);
+    lst.Print();
+
+    cout << "*****Test 2  DeleteItem()*****" << endl;
+    cout << "dynamic test" << endl;
+    cout << "output: the number of nodes deleted" << endl;
+    for (int i = 0; i < 5; i++)
+        lst1->PutItemH(i);
+    lst1->Print();
+    cout << "list after DeleteItem: " << endl;
+    cout << "nodes deleted: " << lst1->DeleteItem(3) << endl;
+    lst1->Print();
+    cout << "***************************************" << endl;
+    //*/
+    //End Test of DeleteItemT()
+//-------------------------------------------------------------------------------
+
+
+//TODO: changed DeleteItemH, check to make sure it works in the
+//  case where the list length is 1 when the function is called.
 
 
     delete lst1; //necessary to invoke destructor on dynamic list

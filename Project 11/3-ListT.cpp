@@ -79,10 +79,18 @@ int ListT::GetLength() const
 
 void ListT::DeleteItemH()
 {
-    node* temp = head->next;
-    delete head;
-    head = temp;
-    length--;
+    if (length == 1)
+    {
+        delete head;
+        head = nullptr;
+        tail = nullptr;
+        length--;
+    } else {
+        node *temp = head->next;
+        delete head;
+        head = temp;
+        length--;
+    }
 }
 
 int ListT::FindItem(const itemType target) const
@@ -106,46 +114,49 @@ int ListT::FindItem(const itemType target) const
 
 int ListT::DeleteItem(const itemType target)
 {
-    //first take care of the case when the head contains
-    //the target item. Loop in case the first few items
-    //in the list are all targets.
-    int numberNodesDeleted = 0;
-    while (head->item == target)
-    {
+    int numNodesDeleted = 0;
+    while (head->item == target) {
+
         DeleteItemH();
-        numberNodesDeleted++;
+        numNodesDeleted++;
+
     }
 
-    //init the pointers that we will use to manipulate the
-    //list.
+
     node* prev = head;
     node* cur = head->next;
 
-    //at this point we know that the head of the
-    //list is not the target.
-    while (cur != nullptr)
-    {
-        //check if the current node's item is the target.
-        if (cur->item == target)
-        {
-            node* rmv = cur;
-            cur = cur->next;
-            prev->next = cur;
-            rmv->next = nullptr;
-            delete rmv;
-            length--;
-            numberNodesDeleted++;
-        } else {
-            prev = prev->next;
-            cur = cur->next;
+    if (length != 0) {
+        while (cur != nullptr) {
+            if (cur->item == target) {
+                if (length == 1) {
+                    DeleteItemT();
+                    numNodesDeleted++;
+                } else {
+                    node *rmv = cur;
+                    cur = cur->next;
+                    prev->next = cur;
+                    rmv->next = nullptr;
+                    delete rmv;
+                    length--;
+                    numNodesDeleted++;
+                }
+            } else {
+                prev = prev->next;
+                cur = cur->next;
+            }
         }
     }
-    return numberNodesDeleted;
+    return numNodesDeleted;
 }
 
 itemType ListT::GetItemT() const
 {
-    return tail->item;
+    if (length != 0) {
+        return tail->item;
+    } else {
+        return -1;
+    }
 }
 
 void ListT::PutItemT(const itemType itemIn)
@@ -163,4 +174,36 @@ void ListT::PutItemT(const itemType itemIn)
         delete temp;
         length++;
     }
+}
+
+void ListT::DeleteItemT()
+{
+    if (length != 0) {
+        if (length == 1) {
+            delete tail;
+            head = nullptr;
+            tail = nullptr;
+            length--;
+        } else {
+            node *prev = PtrTo();
+            prev->next = nullptr;
+
+            tail->next = nullptr;
+            delete tail;
+
+            tail = prev;
+            length--;
+        }
+    }
+}
+
+//returns a pointer to the node just before the tail.
+node* ListT::PtrTo()
+{
+    node* cur = head;
+    while (cur->next != tail)
+    {
+        cur = cur->next;
+    }
+    return cur;
 }
