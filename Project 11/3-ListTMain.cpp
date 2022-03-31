@@ -237,11 +237,13 @@ int main()
     //End Test of DeleteItemT()
 //-------------------------------------------------------------------------------
     //Test of DeleteItem()
-    /*
+    ///*
     cout << "***************************************" << endl;
     cout << "*****Test 1 DeleteItem()*****" << endl;
     cout << "static test" << endl;
     cout << "output: the number of nodes deleted" << endl;
+    for (int i = 0; i < 5; i++)
+        lst.PutItemH(i);
     for (int i = 0; i < 5; i++)
         lst.PutItemH(i);
     lst.Print();
@@ -252,6 +254,8 @@ int main()
     cout << "*****Test 2  DeleteItem()*****" << endl;
     cout << "dynamic test" << endl;
     cout << "output: the number of nodes deleted" << endl;
+    for (int i = 0; i < 5; i++)
+        lst1->PutItemH(i);
     for (int i = 0; i < 5; i++)
         lst1->PutItemH(i);
     lst1->Print();

@@ -3,6 +3,7 @@ using namespace std;
 
 #include "3-ListT.h"
 
+//Constructor Function.
 ListT::ListT()
 {
     length = 0;
@@ -10,6 +11,7 @@ ListT::ListT()
     tail = nullptr;
 }
 
+//Destructor function.
 ListT::~ListT()
 {
     node* curNode = head;
@@ -27,6 +29,12 @@ ListT::~ListT()
     delete tail;
 }
 
+/* Description: This function places an item in a new node at the
+ *              head of the list.
+ * Inputs: itemType item, the item you want to be the new head of
+ *         the list.
+ * Returns: none.
+ */
 void ListT::PutItemH(itemType item)
 {
     //to put an item at the head of the list, create a new node
@@ -48,6 +56,10 @@ void ListT::PutItemH(itemType item)
     }
 }
 
+/* Description: This function displays the content of the list.
+ * Inputs: none.
+ * Returns: none.
+ */
 void ListT::Print() const
 {
     node* cur = head;
@@ -58,11 +70,20 @@ void ListT::Print() const
     }
 }
 
+/* Description: This function returns the item at the head.
+ * Inputs: none.
+ * Returns: itemType item, the item at head.
+ */
 itemType ListT::GetItemH() const
 {
     return head->item;
 }
 
+/* Description: This function tells the main program
+ *              whether the list is empty or not.
+ * Inputs: none.
+ * Returns: bool 1 if empty, and 0 if not.
+ */
 bool ListT::IsEmpty() const
 {
     if (length == 0) {
@@ -72,11 +93,19 @@ bool ListT::IsEmpty() const
     }
 }
 
+/* Description: This function return the length of the list.
+ * Inputs: none.
+ * Returns: int, length, the length of the list.
+ */
 int ListT::GetLength() const
 {
     return length;
 }
-
+/* Description: This function deletes the item at the head of
+ *              the list.
+ * Inputs: none.
+ * Returns: none.
+ */
 void ListT::DeleteItemH()
 {
     if (length == 1)
@@ -93,6 +122,11 @@ void ListT::DeleteItemH()
     }
 }
 
+/* Description: This function finds the number of nodes in the
+ *              list that hold the target item.
+ * Inputs: the target item.
+ * Returns: int, the number of occurrences in the list.
+ */
 int ListT::FindItem(const itemType target) const
 {
     int numberOfNodesWithItem = 0;
@@ -112,6 +146,11 @@ int ListT::FindItem(const itemType target) const
     return numberOfNodesWithItem;
 }
 
+/* Description: This function deletes all the instances
+ *              of a target item in a list.
+ * Inputs: the target item.
+ * Returns: int, the number of items deleted.
+ */
 int ListT::DeleteItem(const itemType target)
 {
     int numNodesDeleted = 0;
@@ -150,6 +189,11 @@ int ListT::DeleteItem(const itemType target)
     return numNodesDeleted;
 }
 
+/* Description: This function returns the item at the end
+ *              of the list.
+ * Inputs: none.
+ * Returns: the item at the end of the list.
+ */
 itemType ListT::GetItemT() const
 {
     if (length != 0) {
@@ -159,6 +203,11 @@ itemType ListT::GetItemT() const
     }
 }
 
+/* Description: This function puts the input item at the
+ *              tail of the list.
+ * Inputs: the item to be put at the end of the list.
+ * Returns: none.
+ */
 void ListT::PutItemT(const itemType itemIn)
 {
     if (length == 0)
@@ -176,6 +225,11 @@ void ListT::PutItemT(const itemType itemIn)
     }
 }
 
+/* Description: This function deletes the item at the end
+ *              of the list.
+ * Inputs: none.
+ * Returns: none.
+ */
 void ListT::DeleteItemT()
 {
     if (length != 0) {
@@ -197,7 +251,11 @@ void ListT::DeleteItemT()
     }
 }
 
-//returns a pointer to the node just before the tail.
+/* Description: This function returns a pointer to the node
+ *              just before the tail of the list.
+ * Inputs: none.
+ * Returns: none.
+ */
 node* ListT::PtrTo()
 {
     node* cur = head;
