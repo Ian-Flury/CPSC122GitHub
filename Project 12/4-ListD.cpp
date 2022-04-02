@@ -162,6 +162,30 @@ int ListD::DeleteAll(itemType item)
             prv = prv->next;
         }
     }
-
     return numberNodesDeleted;
+}
+
+//Use Selection Sort;
+void ListD::Sort()
+{
+    doubleNode* cur = head;
+
+    //traversing the whole list
+    while (cur != nullptr)
+    {
+        doubleNode* currentMin = cur;
+        doubleNode* cur2 = cur->next;
+        //traversing the unsorted region of the list
+        while (cur2 != nullptr) {
+            if (currentMin->item > cur2->item) {
+                currentMin = cur2;
+            }
+            cur2 = cur2->next;
+        }
+
+        itemType temp = cur->item;
+        cur->item = currentMin->item;
+        currentMin->item = temp;
+        cur = cur->next;
+    }
 }
