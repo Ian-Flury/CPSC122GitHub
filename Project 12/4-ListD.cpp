@@ -112,3 +112,21 @@ void ListD::PrintBackward()
         i++;
     }
 }
+
+void ListD::Delete(int pos)
+{
+    if (length != 0) {
+        doubleNode *rmv = FindPosition(pos+1);
+        doubleNode *nextNode = rmv->next;
+        doubleNode *prevNode = rmv->prev;
+
+        nextNode->prev = prevNode;
+        prevNode->next = nextNode;
+
+        rmv->next = nullptr;
+        rmv->prev = nullptr;
+        delete rmv;
+
+        length--;
+    }
+}
