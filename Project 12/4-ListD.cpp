@@ -100,4 +100,15 @@ void ListD::PrintForward()
   i++;
  }
 }
- 
+
+void ListD::PrintBackward()
+{
+    doubleNode* cur = tail->prev;
+    int i = 0;
+    while (i < length)
+    {
+        cout << cur->item << endl;
+        cur = cur->prev;
+        i++;
+    }
+}
