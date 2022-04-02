@@ -41,7 +41,9 @@ void ListD::InitializeVars()
  tail->next = NULL;
 }
 
-//how would you do this?
+//TODO: will I lose points for not using the Delete function
+//  in the Destructor? (once finished, redo the constructor to use
+//  the Delete function).
 ListD::~ListD()
 {
     while (head != nullptr) {
@@ -129,4 +131,37 @@ void ListD::Delete(int pos)
 
         length--;
     }
+}
+
+//You don't have to deal with the case where you have
+//to loop through multiple items at the head of the list.
+//don't use the Delete() function because it makes things
+//slower.
+int ListD::DeleteAll(itemType item)
+{
+    int numberNodesDeleted = 0;
+    doubleNode* prv = head;
+    doubleNode* cur = head->next;
+
+    while (cur != nullptr)
+    {
+        if (cur->item == item)
+        {
+            doubleNode* rmv = cur;
+            cur = cur->next;
+            cur->prev = prv;
+            prv->next = cur;
+
+            rmv->next = nullptr;
+            rmv->prev = nullptr;
+            delete rmv;
+            length--;
+            numberNodesDeleted++;
+        } else {
+            cur = cur->next;
+            prv = prv->next;
+        }
+    }
+
+    return numberNodesDeleted;
 }
