@@ -13,7 +13,7 @@ ListD::ListD(ListD* lst)
 {
  InitializeVars();
  //returns pointer to the first node, which is what we want here
- doubleNode* cur = lst->FindPosition(2);
+ doubleNode* cur = lst->FindPosition(2); //enter 1 more than u want to find.
  for (int i = 1; i <= lst->length; i++)
  {
   cout << cur->item << endl;
@@ -44,6 +44,15 @@ void ListD::InitializeVars()
 //how would you do this?
 ListD::~ListD()
 {
+    while (head != nullptr) {
+        doubleNode* cur = head;
+        head = head->next;
+        cur->next = nullptr;
+        cur->prev = nullptr;
+        delete cur;
+    }
+    head = nullptr;
+    tail = nullptr;
 }
 
 doubleNode* ListD::FindPosition(int pos)
