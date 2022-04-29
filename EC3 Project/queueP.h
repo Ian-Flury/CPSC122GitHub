@@ -13,7 +13,6 @@ class PQueue : public QueueI
  public:
    PQueue();
    PQueue(PQueue* q);
-
    /*
    pre: an instance of PQueue  exists. 
         nodes in queue are in ascending order by item
