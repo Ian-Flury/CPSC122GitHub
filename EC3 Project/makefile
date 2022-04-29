@@ -16,3 +16,7 @@ list.o: list.cpp
 
 clean :
 	rm *.o
+
+run :
+	make
+	./pqueue
