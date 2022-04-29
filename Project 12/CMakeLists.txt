@@ -3,4 +3,4 @@ project(Project_12)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Project_12 main.cpp)
+add_executable(Project_12 4-ListDTst.cpp ListDtempl.cpp)

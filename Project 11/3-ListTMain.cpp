@@ -1,3 +1,11 @@
+/*
+    Name: Ian Flury
+    Class: CPSC 122
+    Assignment: Project 11, Linked list with tail pointer
+    Date Submitted: 3/31/2022
+    Notes: Please see the other two project files,
+           3-List.cpp and 3-List.h
+*/
 #include <iostream>
 using namespace std;
 

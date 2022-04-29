@@ -1,0 +1,7 @@
+# ninja log v5
+0	372	6718260491805435	CMakeFiles/Project_13.dir/main.cpp.obj	b621a641b423b076
+374	611	6718260494077358	Project_13.exe	653a2b32ced2a1c6
+0	369	6718276242071940	CMakeFiles/Project_13.dir/calcTst.cpp.obj	e819592c22159a43
+17	435	6718276242732154	CMakeFiles/Project_13.dir/calc.cpp.obj	daadc173cd2ca89b
+435	565	6718276244021466	Project_13.exe	db18a48687ea3dc0
+3	753	6720213468570168	CMakeFiles/Project_13.dir/calcTst.cpp.obj	e819592c22159a43

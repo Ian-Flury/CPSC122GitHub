@@ -160,8 +160,6 @@ int ListT::DeleteItem(const itemType target)
         numNodesDeleted++;
 
     }
-
-
     node* prev = head;
     node* cur = head->next;
 

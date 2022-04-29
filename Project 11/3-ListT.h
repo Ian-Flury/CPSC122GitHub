@@ -1,8 +1,8 @@
 /*
-Name: Paul De Palma
-Class: CPSC 122, Section 1
-Date Submitted: March, 2022
-Assignment: N/A 
+Name: Ian Flury
+Class: CPSC 122, Section 2
+Date Submitted: March 31, 2022
+Assignment: Project 11
 Description: Program illustrates a linked list both head and tail pointers 
 */
 
